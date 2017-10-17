@@ -1,17 +1,22 @@
 import React, { Component } from 'react';
 import './App.css';
-import NavBar from './components/nav_bar'
-import StoryList from './components/story_list'
+import StoryBoard from './components/story_board'
+import Logo from './components/logo'
+import {BrowserRouter as Router} from 'react-router-dom'
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <NavBar />
-        <StoryList />
-      </div>
+      <Router>
+        <div className="App">
+          <Logo />
+          <StoryBoard />
+        </div>
+      </Router>
     );
   }
 }
+
+
 
 export default App;

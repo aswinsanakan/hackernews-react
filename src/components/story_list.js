@@ -1,48 +1,66 @@
 import React, {Component} from 'react'
 import {create} from 'apisauce'
 import Story from './story'
-
+import { Link} from 'react-router-dom'
 
 const storiesApi = create({
   baseURL: 'https://hacker-news.firebaseio.com/v0'
 })
 
 class StoryList extends Component {
+
   constructor (props) {
     super(props);
+    
     this.state = {
-      stories: []
+      stories: [],
+      storyCount: 0,
+      choice: ''
     }
   }
 
-  componentDidMount() {
-    storiesApi.get('/topstories.json')
+  // componentDidMount() {
+  //   // const choice = this.props.match.params.selectChoice;
+  //   this.getStories(choice);
+  // }
+
+  componentWillMount() {
+    const choice = this.props.match.params.selectChoice;
+    this.getStories(choice);
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.data !== this.props.data) {
+      this.getStories(this.props.match.params.selectChoice);
+    }
+  }
+
+  getStories(choice) {
+    const limit = 10;
+    storiesApi.get(`/${choice}stories.json`)
     .then(response => {
-      this.setState({stories: response.data})
+      this.setState({stories: response.data.slice(0,limit), storyCount: response.data.length, choice: choice})
     })
     .catch(error => console.log(error))
   }
 
   render () {
-    const topstories = this.state.stories;
+    const stories = this.state.stories; 
     return (
       <div>
-        {
-          topstories ? (
-            <ul>
-              {
-                topstories.map((story) => {
-                  return (
-                    <Story story={story} key={story} /> 
-                  )
-                })
-              }
-            </ul>
-              
-          ) : (
-            <div>Loading...</div> 
-            
-          )
+        {stories ? (
+          <ul>
+            {
+              stories.map((story) => {
+                return (
+                  <Story story={story} key={story} /> 
+                )
+              })
+            }
+          </ul>    
+        ) : (
+          <div>Loading...</div> 
+        )
         }
       </div>
     )
