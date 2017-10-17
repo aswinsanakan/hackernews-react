@@ -5,11 +5,11 @@ class NavItem extends Component {
 
   render() {
     return(
-      <div>
-        <Link to={`/${this.props.choice}`}>
-          {this.props.choice}
-        </Link>
-      </div>
+        <li>
+          <Link to={`/${this.props.choice}`}>
+            <h5>{this.props.choice}</h5>
+          </Link>
+        </li>
     )
   }
 

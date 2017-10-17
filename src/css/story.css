@@ -1,0 +1,55 @@
+
+* {margin: 0; padding: 0;}
+
+div {
+  margin: 20px;
+}
+
+ol {
+  list-style-type: none;
+  width: 500px;
+}
+
+li h4 {
+  font: bold 20px/1.5 Helvetica, Verdana, sans-serif;
+}
+
+li img {
+  float: left;
+  margin: 0 15px 0 0;
+}
+
+li p {
+  font: 200 12px/1.5 Georgia, Times New Roman, serif;
+}
+
+.score {
+  color: red;
+  text-decoration: bold;
+}
+
+li {
+  padding: 10px;
+  overflow: auto;
+  text-align: left;
+}
+
+li:hover {
+  /*background: #eee;*/
+  background: #B5DEAD;
+  cursor: pointer;
+}
+
+a {
+    /*color: #0060B6;*/
+    color: black;
+    text-decoration: none;
+}
+
+a:hover 
+{
+     /*color:#00A0C6;*/
+     color: black; 
+     text-decoration:none; 
+     cursor:pointer;  
+}

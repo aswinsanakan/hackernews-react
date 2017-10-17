@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {create} from 'apisauce'
+import '../css/story.css'
 
 const storyApi = create({
   baseURL: 'https://hacker-news.firebaseio.com/v0'
@@ -20,8 +21,8 @@ class Story extends Component {
     storyApi.get(`/item/${this.props.story}.json`)
     .then((response) => {
       this.setState({
-        url: response.data.title,  
-        title: response.data.url,
+        url: response.data.url,  
+        title: response.data.title,
         score: response.data.score
       })
     })
@@ -32,10 +33,10 @@ class Story extends Component {
 
     return(
       <li>
-        {state.title}
-        {state.url}
-        {state.score}
-        --------------
+        <a href={state.url} target='_blank'>
+          <h4>{state.title}</h4>
+        </a>
+        <p><span className='score'>{state.score}</span> upvotes</p>
       </li>
     )
   }

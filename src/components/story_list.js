@@ -43,7 +43,7 @@ class StoryList extends Component {
     return (
       <div>
         {stories ? (
-          <ul>
+          <ol>
             {
               stories.map((story) => {
                 return (
@@ -51,7 +51,7 @@ class StoryList extends Component {
                 )
               })
             }
-          </ul>
+          </ol>
         ) : (
           <div>Loading...</div>
         )
