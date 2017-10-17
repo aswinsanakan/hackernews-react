@@ -19,7 +19,9 @@ class StoryBoard extends Component {
           <Route exact path="/" render={() => (
             <div> Welcome ! Choose a category. </div>
           )} />
-          <Route path="/:selectChoice" component={StoryList}/>
+          <Route path="/:selectChoice" render={({match}) => (
+            <StoryList choice={match.params.selectChoice} />
+          )}/>
         </Switch>
       </div>
     )

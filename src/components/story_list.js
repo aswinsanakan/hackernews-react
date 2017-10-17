@@ -19,18 +19,18 @@ class StoryList extends Component {
   }
 
   componentDidMount() {
-    const choice = this.props.match.params.selectChoice;
+    const choice = this.props.choice;
     this.getStories(choice);
   }
 
   // componentWillMount() {
-  //   const choice = this.props.match.params.selectChoice;
+  //   const choice = this.props.choice;
   //   this.getStories(choice);
   // }
 
   componentDidUpdate(prevProps, prevState) {
     if (prevProps.data !== this.props.data) {
-      this.getStories(this.props.match.params.selectChoice);
+      this.getStories(this.props.choice);
     }
   }
 
@@ -44,7 +44,7 @@ class StoryList extends Component {
   }
 
   render () {
-    const stories = this.state.stories; 
+    const stories = this.state.stories;
     return (
       <div>
         {stories ? (
