@@ -10,7 +10,7 @@ class StoryList extends Component {
 
   constructor (props) {
     super(props);
-    
+
     this.state = {
       stories: [],
       storyCount: 0,
@@ -23,16 +23,11 @@ class StoryList extends Component {
     this.getStories(choice);
   }
 
-  // componentWillMount() {
-  //   const choice = this.props.choice;
-  //   this.getStories(choice);
-  // }
-
-  componentDidUpdate(prevProps, prevState) {
-    if (prevProps.data !== this.props.data) {
-      this.getStories(this.props.choice);
-    }
+  componentWillUpdate() {
+    const choice = this.props.choice;
+    this.getStories(choice);
   }
+
 
   getStories(choice) {
     const limit = 10;
@@ -52,13 +47,13 @@ class StoryList extends Component {
             {
               stories.map((story) => {
                 return (
-                  <Story story={story} key={story} /> 
+                  <Story story={story} key={story} />
                 )
               })
             }
-          </ul>    
+          </ul>
         ) : (
-          <div>Loading...</div> 
+          <div>Loading...</div>
         )
         }
       </div>
