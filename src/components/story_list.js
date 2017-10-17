@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import {create} from 'apisauce'
 import Story from './story'
-import { Link} from 'react-router-dom'
 
 const storiesApi = create({
   baseURL: 'https://hacker-news.firebaseio.com/v0'
@@ -19,15 +18,15 @@ class StoryList extends Component {
     }
   }
 
-  // componentDidMount() {
-  //   // const choice = this.props.match.params.selectChoice;
-  //   this.getStories(choice);
-  // }
-
-  componentWillMount() {
+  componentDidMount() {
     const choice = this.props.match.params.selectChoice;
     this.getStories(choice);
   }
+
+  // componentWillMount() {
+  //   const choice = this.props.match.params.selectChoice;
+  //   this.getStories(choice);
+  // }
 
   componentDidUpdate(prevProps, prevState) {
     if (prevProps.data !== this.props.data) {

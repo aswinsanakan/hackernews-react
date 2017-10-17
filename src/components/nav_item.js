@@ -1,10 +1,7 @@
 import React, {Component} from 'react'
-import {BrowserRouter as Router, Link} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
 class NavItem extends Component {
-  constructor(props) {
-    super(props)
-  }
 
   render() {
     return(
