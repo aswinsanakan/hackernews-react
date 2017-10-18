@@ -1,2 +1,3 @@
-## Hacker News - [React app](https://github.com/aswinsanakan/hackernews-react)
-A HackerNews app in ReactJS using official Hacker News API.
+## Hacker News Lite - A React implementation of HN
+### [Github](https://github.com/aswinsanakan/hackernews-react) | [Demo](https://hackernews-lite.herokuapp.com/)
+A lite version of HackerNews in ReactJS (using official Hacker News API.)
