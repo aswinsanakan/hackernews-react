@@ -1,15 +1,16 @@
 import React, {Component} from 'react'
 import '../css/logo.css'
+import NavBar from './nav_bar'
 
 class Logo extends Component {
   render () {
     return (
-      <logo> 
+      <div>
         <h2>
-          HackerNews <sup>in ReactJS</sup>
+          <a href="/">HackerNews</a> <sup>{'{'}React{'}'}</sup>
         </h2>
-
-      </logo>
+        <NavBar />
+      </div>
     )
   }
 }
