@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
-import NavBar from './nav_bar'
 import StoryList from './story_list'
 import { Route, Switch} from 'react-router-dom'
+import '../css/story_board.css'
 
 class StoryBoard extends Component {
   constructor(props) {
@@ -14,10 +14,9 @@ class StoryBoard extends Component {
   render() {
     return (
       <div>
-        <NavBar />
         <Switch>
           <Route exact path="/" render={() => (
-            <div> Welcome ! Choose a category. </div>
+            <div className='welcome'> <span role='img' aria-label="HandWave">👋</span> Hey there! Choose a section to start. </div>
           )} />
           <Route path="/:selectChoice" render={({match}) => (
             <StoryList choice={match.params.selectChoice} />
