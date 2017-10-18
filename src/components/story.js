@@ -21,9 +21,9 @@ class Story extends Component {
     storyApi.get(`/item/${this.props.story}.json`)
     .then((response) => {
       this.setState({
-        url: response.data.url,  
-        title: response.data.title,
-        score: response.data.score
+        url: response.data.url || '',  
+        title: response.data.title || '',
+        score: response.data.score || ''
       })
     })
   }
@@ -33,10 +33,17 @@ class Story extends Component {
 
     return(
       <li>
-        <a href={state.url} target='_blank'>
-          <h4>{state.title}</h4>
-        </a>
-        <p><span className='score'>{state.score}</span> upvotes</p>
+        { state.title ? (
+          <div>
+            <a href={state.url} target='_blank'>
+              <h4>{state.title}</h4>
+            </a>
+            <p><span className='score'>{state.score}</span> upvotes</p>
+          </div>
+          ) : (
+            <div className="loader"></div>
+          )
+        }
       </li>
     )
   }
