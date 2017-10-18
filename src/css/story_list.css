@@ -1,0 +1,10 @@
+h3 {
+  color: #FE5F55;
+  text-decoration: underline;
+  font-family: 'open-sans', monospace;
+}
+
+h3:first-letter {
+  text-transform:capitalize;
+
+}
