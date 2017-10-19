@@ -13,7 +13,8 @@ class Story extends Component {
     this.state = {
       title: '',
       url: '',
-      score: ''      
+      score: '',
+      author: ''      
     }
   }
 
@@ -23,7 +24,8 @@ class Story extends Component {
       this.setState({
         url: response.data.url || '',  
         title: response.data.title || '',
-        score: response.data.score || ''
+        score: response.data.score || '',
+        author: response.data.by || ''
       })
     })
   }
@@ -38,7 +40,7 @@ class Story extends Component {
             <a href={state.url} target='_blank'>
               <h4>{state.title}</h4>
             </a>
-            <p><span className='score'>{state.score}</span> upvotes</p>
+            <p>by <span className='author'>{state.author}</span> | <span className='score'>{state.score}</span> upvotes</p>
           </div>
           ) : (
             <div className="loader"></div>
