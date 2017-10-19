@@ -1,0 +1,30 @@
+footer {
+  margin: 0;
+  padding: 0;
+  height: 55px;
+  text-align: center;
+  font-family: 'open-sans', monospace;
+
+
+   position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    overflow:hidden;
+}
+
+footer .me {
+  font-style: italic;
+  color: blue;
+}
+
+.source-code {
+  align-items: center;
+  height: 10px ;
+  margin: auto;
+}
+
+.source-code .github-logo {
+  height: 25px;
+  width: 25px;  
+}
